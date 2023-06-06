@@ -30,18 +30,19 @@ createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    // ...
+
   })
   .catch((error) => {
     const errorCode = error.code;
     
     // let there be an error code of "auth/email-already-exists"
-    console.log(getFirebaseAuthError(errorCode)) // this will give message "Email Already in Use"
 
-    // use this message in toast or anything where user can see
+    console.log(getFirebaseAuthError(errorCode)) // this will print "Email Already in Use"
+
+    // use this message in a toast or anything where user can see
   });
 
 ```
 
-Pass The Error Code to the function and *error-mask* will give you the Human readable string
+Pass The Error Code to the function and **error-mask** will give you the Human readable string
 
