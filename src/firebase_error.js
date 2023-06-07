@@ -205,6 +205,16 @@ const fireBaseAuthErr = {
       "The provided uid is already in use by an existing user. Each user must have a unique uid.",
     message: "UID Already in Use",
   },
+  "auth/user-not-found": {
+    description:
+      "No account was found for the given credentials.",
+    message: "Invalid Credentials",
+  },
+  "auth/wrong-password": {
+    description:
+      "No account was found for the given credentials.",
+    message: "Invalid Credentials",
+  },
 };
 
 const firebaseFirestoreError = {
