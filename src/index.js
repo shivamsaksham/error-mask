@@ -1,4 +1,4 @@
-import { mongoDbErrors } from "mongo_db";
+import { mongoDbErrors } from "./mongo_db";
 import { fireBaseAuthErr, firebaseFirestoreError, firebaseStorageError } from "./firebase_error"
 
 const getFirebaseAuthError = (error_code)=>{
