@@ -37,7 +37,7 @@ createUserWithEmailAndPassword(auth, email, password)
     
     // let there be an error code of "auth/email-already-exists"
 
-    console.log(getFirebaseAuthError(errorCode)) // this will print "Email Already in Use"
+    console.log(getFirebaseAuthError(errorCode).message) // this will print "Email Already in Use"
 
     // use this message in a toast or anything where user can see
   });
