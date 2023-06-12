@@ -6,7 +6,7 @@ const getFirebaseAuthError = (error_code)=>{
     if (msg) {
         return msg
     }else{
-        fixNotFound(error_code)
+        return fixNotFound(error_code)
     }
 }
 
@@ -15,7 +15,7 @@ const getFirebaseStoreError = (error_code)=>{
     if (msg) {
         return msg
     }else{
-        fixNotFound(error_code)
+        return fixNotFound(error_code)
     }
 }
 
@@ -24,7 +24,7 @@ const getFirebaseStorageError = (error_code)=>{
     if (msg) {
         return msg;
     }else{
-        fixNotFound(error_code)
+        return fixNotFound(error_code)
     }
 }
 
@@ -33,7 +33,7 @@ const getMongoError = (error_code)=>{
     if (msg) {
         return msg
     }else{
-        fixNotFound(error_code)
+        return fixNotFound(error_code)
     }
 }
 

@@ -1,4 +1,9 @@
 const fireBaseAuthErr = {
+  "auth/popup-closed-by-user": {
+    description:
+      "The authentication popup was closed by the user. Please make sure to complete the authentication process by keeping the popup open until it finishes.",
+    message: "Authentication Popup Closed",
+  },
   "auth/claims-too-large": {
     description:
       "The claims payload provided to setCustomUserClaims() exceeds the maximum allowed size of 1000 bytes.",
