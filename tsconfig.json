@@ -1,9 +1,12 @@
 {
-    "extends": "./tsconfig-base.json",
-    "compilerOptions": {
-        "module": "esnext",
-        "outDir": "dist/mjs",
-        "target": "esnext"
-    },
-
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "commonjs",
+    "noEmit": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,                         
+    "noUncheckedIndexedAccess": true,
+    "skipLibCheck": true  
+  }
 }

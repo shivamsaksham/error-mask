@@ -1,4 +1,10 @@
-export const mongoDbErrors = {
+interface MongoError {
+  [key: string]: {
+    message: string
+  }
+}
+
+export const mongoDbErrors: MongoError = {
   1: {
     message: "An internal error occurred.",
   },

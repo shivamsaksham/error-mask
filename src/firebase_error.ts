@@ -1,4 +1,11 @@
-const fireBaseAuthErr = {
+interface FirebaseError {
+  [key :string]:{
+    description: string;
+    message: string;
+  }
+}
+
+const fireBaseAuthErr :  FirebaseError  = {
   "auth/popup-closed-by-user": {
     description:
       "The authentication popup was closed by the user. Please make sure to complete the authentication process by keeping the popup open until it finishes.",
@@ -222,7 +229,7 @@ const fireBaseAuthErr = {
   },
 };
 
-const firebaseFirestoreError = {
+const firebaseFirestoreError: FirebaseError = {
   "firestore/cancelled": {
     description: "The operation was cancelled (typically by the caller).",
     message: "Operation cancelled.",
@@ -292,7 +299,7 @@ const firebaseFirestoreError = {
   },
 };
 
-const firebaseStorageError = {
+const firebaseStorageError:FirebaseError = {
   "storage/unknown": {
     description: "An unknown error occurred.",
     message: "Unknown error.",
