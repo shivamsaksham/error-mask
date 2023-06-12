@@ -1,4 +1,4 @@
-export const mongoDbErrors = {
+export default mongoDbErrors = {
   1: {
     message: "An internal error occurred.",
   },

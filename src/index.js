@@ -1,6 +1,8 @@
 import { mongoDbErrors } from "./mongo_db";
 import { fireBaseAuthErr, firebaseFirestoreError, firebaseStorageError } from "./firebase_error"
 
+
+
 const getFirebaseAuthError = (error_code)=>{
     const msg = fireBaseAuthErr[error_code];
     if (msg) {
