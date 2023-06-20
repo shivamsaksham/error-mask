@@ -4,7 +4,7 @@ interface MongoError {
   }
 }
 
-export const mongoDbErrors: MongoError = {
+const mongoDbErrorsList: MongoError = {
   1: {
     message: "An internal error occurred.",
   },
@@ -42,3 +42,25 @@ export const mongoDbErrors: MongoError = {
     message: "Exceeded the time limit for the operation.",
   },
 };
+
+export const getMongoError = (error_code: string) => {
+  const msg = mongoDbErrorsList[error_code]
+  if (msg) {
+    return msg
+  } else {
+    return fixNotFound(error_code)
+  }
+}
+
+function fixNotFound(error_code: string) {
+  try {
+    let err = error_code.split("/")[1]
+    err = err?.replace("-", " ")
+    err = err?.toUpperCase()
+
+
+    return { message: err }
+  } catch (error) {
+    return { message : error_code }
+  }
+}

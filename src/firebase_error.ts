@@ -1,11 +1,11 @@
 interface FirebaseError {
-  [key :string]:{
+  [key: string]: {
     description: string;
     message: string;
   }
 }
 
-const fireBaseAuthErr :  FirebaseError  = {
+const fireBaseAuthErrList: FirebaseError = {
   "auth/popup-closed-by-user": {
     description:
       "The authentication popup was closed by the user. Please make sure to complete the authentication process by keeping the popup open until it finishes.",
@@ -229,7 +229,7 @@ const fireBaseAuthErr :  FirebaseError  = {
   },
 };
 
-const firebaseFirestoreError: FirebaseError = {
+const firebaseFirestoreErrorList: FirebaseError = {
   "firestore/cancelled": {
     description: "The operation was cancelled (typically by the caller).",
     message: "Operation cancelled.",
@@ -299,7 +299,7 @@ const firebaseFirestoreError: FirebaseError = {
   },
 };
 
-const firebaseStorageError:FirebaseError = {
+const firebaseStorageErrorList: FirebaseError = {
   "storage/unknown": {
     description: "An unknown error occurred.",
     message: "Unknown error.",
@@ -376,4 +376,40 @@ const firebaseStorageError:FirebaseError = {
   },
 };
 
-export { fireBaseAuthErr, firebaseFirestoreError, firebaseStorageError };
+export const getFirebaseAuthError = (error_code: string) => {
+  const msg = fireBaseAuthErrList[error_code];
+  if (msg) {
+    return { "message": msg.message, "description": msg.description }
+  } else {
+    return fixNotFound(error_code)
+  }
+}
+
+export const getFirebaseStoreError = (error_code: string) => {
+  const msg = firebaseFirestoreErrorList[error_code];
+  if (msg) {
+    return msg
+  } else {
+    return fixNotFound(error_code)
+  }
+}
+
+export const getFirebaseStorageError = (error_code: string) => {
+  const msg = firebaseStorageErrorList[error_code]
+  if (msg) {
+    return msg;
+  } else {
+    return fixNotFound(error_code)
+  }
+}
+
+const fixNotFound = (error_code: string) => {
+  try {
+    let err = error_code.split("/")[1]
+    err = err?.replace("-", " ")
+    err = err?.toUpperCase()
+    return { description: "", message: err }
+  } catch (error) {
+    return { description: "", message: error_code }
+  }
+}
