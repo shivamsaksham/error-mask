@@ -3,7 +3,7 @@
   "version": "1.1.1",
   "description": "A light weight package to get the appropriate error message for every error.",
   "author": "Shivam-Saksham",
-  "license": "ISC",
+  "license": "MIT",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
   "files": [

@@ -4,7 +4,7 @@ The package for all you error to be beautified.
 
 # Support
 
-Currently we support Firebase (Firestore , Authentication , Storage) and MongoDb - Errors code.
+Currently we support Firebase (Firestore , Authentication , Storage) and MongoDb(Beta) - Errors code.
 
 # Use
 
@@ -13,6 +13,10 @@ Install the package
 ```bash
 
 npm i error-mask
+
+or
+
+yarn add error-mask
 
 ```
 
@@ -46,3 +50,7 @@ createUserWithEmailAndPassword(auth, email, password)
 
 Pass The Error Code to the function and **error-mask** will give you the Human readable string
 
+
+# Contribution
+
+Contributions are always welcomed 
